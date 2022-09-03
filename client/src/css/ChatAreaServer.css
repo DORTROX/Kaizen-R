@@ -1,0 +1,18 @@
+.chatAreaServerN {
+    width: 70vw;
+    height: 10vh;
+    background-color: #161b1c;
+}
+
+.serverN {
+    display: flex;
+    color: white;
+    align-items: center;
+    padding: .5em;
+}
+
+.serverN img {
+    width: 5%;
+    margin-right: 1em;
+    border-radius: 50px;
+}

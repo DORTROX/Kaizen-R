@@ -1,0 +1,43 @@
+.Regis {
+    height: 50vh;
+    /* background-color: #282828; */
+}
+
+.Regis p {
+    height: 10vh;
+    text-align: center;
+    color: #ffffffb5;
+}
+
+.loginButton {
+    height: 40vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Regis input {
+    border: none;
+    margin: 2%;
+    padding: 1em;
+    background-color: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+
+.idk {
+    width: 50vw;
+}
+
+.Regis input:hover {
+    border: 2px solid #009eff;
+}
+
+.Regis input[type=password],.Regis input[type=email]{
+    width: 25vw;
+}

@@ -1,0 +1,19 @@
+.SideNav {
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+    width: 10vw;
+    height: 100vh;
+    background-color: #161b1c;
+    color: lightblue;
+    border-right: 2px solid rgb(71, 70, 70);
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    text-align: center;
+}

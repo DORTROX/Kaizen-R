@@ -1,0 +1,48 @@
+.ServersAndFriends {
+    height: 100vh;
+    width: 20vw;
+    background-color: #161b1c;
+}
+
+.profile {
+    display: flex;
+    color: white;
+    height: 10vh;
+    align-items: center;
+    border-bottom: 2px solid rgb(71, 70, 70);
+    border-right: 2px solid rgb(71, 70, 70);
+}
+
+.profile img {
+    width: 20%;
+    border-radius: 50px;
+    margin: 1em;
+}
+
+.profile p {
+    margin: 1em;
+}
+
+h5 {
+    font-size: large;
+    color: white;
+    text-align: center;
+}
+
+.server {
+    display: flex;
+    color: white;
+    height: 10vh;
+    align-items: center;
+    padding: .5em;
+}
+
+.server img {
+    width: 20%;
+    border-radius: 50px;
+    margin: 1em;
+}
+
+.server:hover {
+    background-color: #3c595e;
+}

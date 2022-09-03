@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.SignAuth {
+    background-image: url('../css/Images/wqe.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.SignAuth h1 {
+    margin: 0;
+    color: #009eff;
+    height: 10vh;
+    text-align: center;
+    animation: ShowCase 2s;
+    letter-spacing: 20px;
+}
+
+.SignAuthButtons {
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    height: 20vh;
+}
+
+.SignAuthButtons p {
+    margin: 2%;
+    padding: 1%;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.SignAuthButtons p:hover {
+    animation: rgb 2s infinite;
+}
+
+@keyframes ShowCase {
+    0% {
+        letter-spacing: 50px;
+    }
+    40% {
+        letter-spacing: 35px;
+    }
+    100% {
+        letter-spacing: 20px;
+    }
+}
+
+@keyframes rgb {
+    0%{
+        color: red;
+    }
+    20% {
+        color: #009eff;
+    }
+    40% {
+        color: rebeccapurple;
+    }
+    60%{
+        color: green;
+    }
+    80% {
+        color: white;
+    }
+    100% {
+        color: red;
+    }
+}

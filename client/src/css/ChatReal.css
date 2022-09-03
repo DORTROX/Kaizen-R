@@ -1,0 +1,58 @@
+.ChatReal {
+    width: 70vw;
+    height: 90vh;
+    background-color: #000000eb;
+    color: white;
+    overflow-y: scroll;
+}
+
+.ChatReal img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.chatme{
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.chatmeC{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .4em;
+    background-color:  #282828;
+    border-radius: 0 20px 20px 20px;
+}
+
+.chatyou {
+    display: flex;
+    margin-right: 1em;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.chatyouC {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .4em;
+    background-color:  #282828;
+    border-radius: 20px 0px 20px 20px;
+}
+
+.sc1::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.sc1::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.sc1::-webkit-scrollbar-thumb {
+    background-color: #dfdfdf;
+    border-radius: 10px;
+}
