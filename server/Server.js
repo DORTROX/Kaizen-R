@@ -5,6 +5,11 @@ const app = express();
 const path = require("path");
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const cors = require('cors');
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"]
+}));
 require('dotenv').config()
 app.use(express.urlencoded({ extended: false }));
 app.use("/", require("./routes/index"));
