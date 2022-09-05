@@ -8,36 +8,24 @@ export class Regis extends Component {
     img: null,
   };
   async geturi(e) {
-    let blob = e.target.files[0];
-    blobToBase64(blob).then(async (res) => {
-      this.setState({
-        imgUrl: res,
-      });
+    let blob = URL.createObjectURL(e.target.files[0]);
+    axios.post("http://localhost:8000/Imaging", blob)
 
-      await axios
-        .post(
-          "https://api.imgbb.com/1/upload?expiration=600&key=de96ee1ca130062862c4b484f650f647", {key : "de96ee1ca130062862c4b484f650f647", image: res}
-        )
-        .then((response) => {
-          console.log("response", response);
-          console.log("response URL", response.data.data.image.url);
-          console.log("success");
-        })
-        .catch((error) => {
-          console.log("error", error);
-          alert("try agains");
-        });
-    });
+    // blobToBase64(blob).then(async (res) => {
+    //   this.setState({
+    //     imgUrl: res,
+    //   });
+    // });
 
-    function blobToBase64(blob) {
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      return new Promise((resolve) => {
-        reader.onloadend = () => {
-          resolve(reader.result);
-        };
-      });
-    }
+    // function blobToBase64(blob) {
+    //   const reader = new FileReader();
+    //   reader.readAsDataURL(blob);
+    //   return new Promise((resolve) => {
+    //     reader.onloadend = () => {
+    //       resolve(reader.result);
+    //     };
+    //   });
+    // }
   }
 
   render() {
