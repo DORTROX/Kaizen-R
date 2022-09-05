@@ -8,9 +8,18 @@ export class Regis extends Component {
         file : null
       }
       geturi(e) {
-        let x = imageBase64.local(e.target.files[0]);
-        console.log("x :",x)
-        console.log(e.target.files[0])
+        const formdata = new FormData()
+        formdata.append("image", e.target.files[0])
+        fetch ("https://api.imgur.com/3/image/", {
+          method: "post",
+          headers: {
+            Authorization : `Client-ID be8ce6ea62d06dc`
+          },
+          body: formdata
+        }).then(data => data.json()).then( data => {
+          console.log(data)
+        })
+        // console.log(e.target.files[0])
       }    
 
   render() {
