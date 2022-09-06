@@ -9,6 +9,10 @@ export class Regis extends Component {
   };
   async geturi(e) {
     let blob = URL.createObjectURL(e.target.files[0]);
+    // let form = new FormData();
+    // form.append("image", e.target.files[0])
+    // console.log(form)
+    // console.log(blob)
     axios.post("http://localhost:8000/Imaging", blob)
 
     // blobToBase64(blob).then(async (res) => {
