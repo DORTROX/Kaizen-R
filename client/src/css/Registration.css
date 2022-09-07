@@ -17,6 +17,14 @@
     justify-content: center;
 }
 
+.loginButton1 {
+    height: 60vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 .Regis input {
     border: none;
     margin: 2%;
@@ -31,7 +39,9 @@
 
 
 .idk {
-    width: 50vw;
+    height: 50vh;
+    display: flex;
+    width: 70vw;
 }
 
 .Regis input:hover {
@@ -40,4 +50,12 @@
 
 .Regis input[type=password],.Regis input[type=email]{
     width: 25vw;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+#prevImg {
+    width: 100px;
 }

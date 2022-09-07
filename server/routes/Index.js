@@ -15,18 +15,9 @@ router.get('/', (req, res) => {
 
 router.post("/Imaging", (req, res) => {
   const arr = Object.keys(req.body);
-  console.log(arr[0])
-  axios
-        .post(
-          "https://api.imgbb.com/1/upload?expiration=600&key=de96ee1ca130062862c4b484f650f647&image="+arr[0])
-        .then((response) => {
-          console.log("response", response);
-          console.log("response URL", response.data.data.image.url);
-          console.log("success");
-        })
-        .catch((error) => {
-          console.log("error", error);
-        }); 
+  let nata = JSON.parse(arr[0])
+  console.log(nata)
+  console.log(nata.imageUri)
 })
 
 
