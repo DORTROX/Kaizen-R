@@ -4,7 +4,6 @@
 }
 
 .Regis p {
-    height: 10vh;
     text-align: center;
     color: #ffffffb5;
 }
@@ -18,10 +17,10 @@
 }
 
 .loginButton1 {
-    height: 60vh;
-    width: 100%;
-    align-items: center;
+    height: 50vh;
+    width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -37,19 +36,47 @@
     color: white;
 }
 
-
-.idk {
-    height: 50vh;
+#userN {
     display: flex;
-    width: 70vw;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 50%;
+    position: relative;
+}
+
+#bottom {
+    bottom: 15px;
+    position: absolute;
+    right: 100px;
+    color: red;
+    justify-content: center !important;
+}
+
+#bottoms {
+    bottom: 15px;
+    position: absolute;
+    left: 100px;
+    color: red;
+    justify-content: center !important;
+}
+
+#emailN {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 50%;
+    position: relative;
+}
+
+#passN {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5vh;
 }
 
 .Regis input:hover {
     border: 2px solid #009eff;
-}
-
-.Regis input[type=password],.Regis input[type=email]{
-    width: 25vw;
 }
 
 #submit:hover {
@@ -58,4 +85,8 @@
 
 #prevImg {
     width: 100px;
+}
+
+#submit:hover {
+    color: #009eff;;
 }

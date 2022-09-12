@@ -1,3 +1,5 @@
 node_modules
 
 /server/.env
+/Xp.js
+/File Api.js
