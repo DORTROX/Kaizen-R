@@ -5,7 +5,8 @@ const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const User = require('../models/user')
 const bcrypt = require("bcrypt");
-
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createServer({});
 
 router.get("/", (req, res) => {
   res.send("Hi");
@@ -13,8 +14,8 @@ router.get("/", (req, res) => {
 
 
 router.get('/authenticate/:token', (req,res) => {
-  console.log(req.params.token)
-  res.status(200).send()
+  // console.log(req.params.token)
+  // res.status(200).send()
 })
 
 router.post("/register", (req, res) => {
@@ -38,7 +39,8 @@ router.post("/register", (req, res) => {
             email: UserData.email
           });
           newUser.save()
-          return res.send(hash)
+          proxy.web(req, res, { target: 'http://localhost:3000/' });
+          res.send(hash)
         })
       )
     }

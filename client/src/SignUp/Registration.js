@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "../css/Registration.css";
+import {useNavigate} from 'react-router-dom';
 
 export class Regis extends Component {
   constructor(props) {
@@ -26,8 +27,8 @@ export class Regis extends Component {
         document.getElementById("username").value = ""
         return alert("Name already registered")
       } else {
-        console.log(res.data)
         localStorage.setItem("OAuth", res.data);
+        useNavigate("http://localhost:1000")
       }
     })
   }else {
