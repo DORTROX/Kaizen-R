@@ -1,2 +1,2 @@
 cd "server"
-npm start dev
+npm run watch

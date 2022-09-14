@@ -3,16 +3,6 @@ import "../css/ChatReal.css";
 
 export const ChatReal = () => {
 
-  const [backendData, setBackEndData] = useState([{}])
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(data => {
-      setBackEndData(data)
-    })
-  }, [])
-
   return (
     <div className="ChatReal sc1">
       <div className="chatme">
@@ -80,12 +70,6 @@ export const ChatReal = () => {
           <h6>DORTROX</h6>
           <p>Hi im dortrox with next gen kaizen</p>
         </div>
-
-      {(typeof backendData.users === "undefined") ? (
-        <p>Loading..</p>
-      ): backendData.users.map((user, i) => (
-        <p key={i}>{user}</p>
-      ))}
 
       </div>
     </div>

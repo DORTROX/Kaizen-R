@@ -1,7 +1,7 @@
 import axios from "axios";
-import { url } from "image-base64";
 import React, { Component } from "react";
 import "../css/Registration.css";
+
 export class Regis extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +20,14 @@ export class Regis extends Component {
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     };
-    let x = axios.post("http://localhost:8000/register", JSON.stringify(data)).then((res) => {
+    axios.post("http://localhost:1000/register", JSON.stringify(data)).then((res) => {
       console.log(res.data)
       if (res.data === "Name already registered"){
         document.getElementById("username").value = ""
         return alert("Name already registered")
+      } else {
+        console.log(res.data)
+        localStorage.setItem("OAuth", res.data);
       }
     })
   }else {
@@ -146,7 +149,7 @@ validate(){
   let pass = document.getElementById("password").value
 
   if(this.state.email.length + this.state.password.length + this.state.userN.length === 0){
-    if (usernamme != "" || email != "" || pass != ""){
+    if (usernamme !== "" || email !== "" || pass !== ""){
       return true;
     } else{
       return false;

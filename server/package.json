@@ -5,18 +5,20 @@
   "main": "Server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon --watch *.js"
+    "watch": "nodemon ./server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.19"
-  },
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "mongoose": "^6.5.3",
     "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

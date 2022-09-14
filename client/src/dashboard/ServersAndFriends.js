@@ -8,7 +8,7 @@ export const ServersAndFriends = () => {
     <div className="ServersAndFriends">
       <div className="profile">
         <img
-          src="https://images-ext-2.discordapp.net/external/vycKRS8KOU02QarxK7sTU43i0H3lcxhkOzKTTY2zOs8/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/853177489743282217/5143eb95ce02320c66990b2d62959751.png?width=480&height=480"
+          src="https://images-ext-1.discordapp.net/external/GmSLnQrAoOgn_q2W-WzmAgYcmNI9XKPQGlNmT8OLqWs/%3Fsize%3D4096/https/cdn.discordapp.com/icons/971114380097896498/0cbf1f96b2bb1d464f9b3a964ee95764.png?width=480&height=480"
           alt=""
           srcSet=""
         />
@@ -19,7 +19,7 @@ export const ServersAndFriends = () => {
       <div className="servers">
         <div className="server">
           <img
-            src="https://images-ext-2.discordapp.net/external/0-VLwRl5ZTYPvnGqKOoDKbsQMoRLEBS9LWTjpOmjC_4/%3Fsize%3D4096/https/cdn.discordapp.com/icons/829490032783917076/74e75b2a2852153049644a54961798c9.png?width=480&height=480"
+            src="https://images-ext-1.discordapp.net/external/GmSLnQrAoOgn_q2W-WzmAgYcmNI9XKPQGlNmT8OLqWs/%3Fsize%3D4096/https/cdn.discordapp.com/icons/971114380097896498/0cbf1f96b2bb1d464f9b3a964ee95764.png?width=480&height=480"
             alt=""
             srcSet=""
           />

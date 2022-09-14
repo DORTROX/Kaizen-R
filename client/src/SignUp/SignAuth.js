@@ -4,7 +4,7 @@ import Registration from "./Registration";
 import "../css/SignAuth.css";
 
 function SignAuth() {
-  const [WhichPage, setWhichPage] = useState("Register");
+  const [WhichPage, setWhichPage] = useState("Login");
   function WhichPaging(page) {
     setWhichPage(page);
   }
