@@ -5,17 +5,20 @@ const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const User = require('../models/user')
 const bcrypt = require("bcrypt");
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createServer({});
 
 router.get("/", (req, res) => {
   res.send("Hi");
 });
 
 
-router.get('/authenticate/:token', (req,res) => {
-  // console.log(req.params.token)
-  // res.status(200).send()
+router.get('/authenticate/:token/', (req,res) => {
+  User.findOne({token : req.params.token}).exec((err, userD) => {
+    if (userD) {
+      res.status(200).send(userD)
+    } else {
+      res.status(400)
+    }
+  })
 })
 
 router.post("/register", (req, res) => {
@@ -31,16 +34,17 @@ router.post("/register", (req, res) => {
       bcrypt.genSalt(10, (err, salt) =>
         bcrypt.hash(UserData.password, salt, (err, hash) => {
           token = hash;
+          token.replace('/', '')
           if (err) throw err;
           const newUser = new User({
             name: UserData.name,
             password: UserData.password,
             token: hash,
-            email: UserData.email
+            email: UserData.email,
+            pfp : 'https://ibb.co/GdvRJn6',
           });
           newUser.save()
-          proxy.web(req, res, { target: 'http://localhost:3000/' });
-          res.send(hash)
+          return res.send(hash)
         })
       )
     }

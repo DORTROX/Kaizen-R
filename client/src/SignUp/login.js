@@ -19,7 +19,6 @@ export class Login extends Component {
       password: document.getElementById("password").value,
     };
     axios.post("http://localhost:1000/login", JSON.stringify(data)).then((res) => {
-      console.log(res.data)
       if (res.data === "Name already registered"){
         document.getElementById("username").value = ""
         return alert("Name already registered")

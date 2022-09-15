@@ -1,34 +1,29 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "../css/Registration.css";
 import {useNavigate} from 'react-router-dom';
 
-export class Regis extends Component {
-  constructor(props) {
-    super(props);
+export default function Regis() {
+  const navigate = useNavigate();
+  const [NuserN,setuserN] = useState([])
+  const [Nemail,setemail] = useState([])
+  const [Npassword,setpassword] = useState([])
 
-    this.state = {
-      userN: [],
-      email: [],
-      password: [],
-    };
-  }
+   function postInfo () {
+    if (validate()){
 
-  postInfo = () => {
-    if (this.validate()){
     let data = {
       name: document.getElementById("username").value,
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     };
     axios.post("http://localhost:1000/register", JSON.stringify(data)).then((res) => {
-      console.log(res.data)
       if (res.data === "Name already registered"){
         document.getElementById("username").value = ""
         return alert("Name already registered")
       } else {
         localStorage.setItem("OAuth", res.data);
-        useNavigate("http://localhost:1000")
+        navigate("/")
       }
     })
   }else {
@@ -36,8 +31,8 @@ export class Regis extends Component {
   }
   };
 
-  ValidateUsername() {
-    let arr = this.state.userN;
+  function ValidateUsername() {
+    let arr = NuserN;
     let usernamme = document.getElementById("username").value;
     if (/[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(usernamme)) {
       if (arr.indexOf("No special Characters are allowed") !== -1) {
@@ -65,10 +60,10 @@ export class Regis extends Component {
         arr = filtered;
       }
     }
-    this.setState({ userN: arr });
+    setuserN(arr)
   }
-  validateEmail() {
-    let arr = this.state.email;
+  function validateEmail() {
+    let arr = Nemail;
     let email = document.getElementById("email").value
     if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,\/]/.test(email)) {
       if (arr.indexOf("No special Characters are allowed") !== -1) {
@@ -96,12 +91,12 @@ export class Regis extends Component {
         arr = filtered;
       }
     }
-    this.setState({ email: arr });
+    setemail(arr)
   }
 
-  validatePassword() {
+  function validatePassword() {
     let pass = document.getElementById("password").value
-    let arr = this.state.password;
+    let arr = Npassword;
     if (/[-!#%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(pass)) {
       if (arr.indexOf("No special Characters are allowed") !== -1) {
       } else {
@@ -141,15 +136,15 @@ export class Regis extends Component {
       arr = filtered;
     }
   }
-  this.setState({password: arr})
+  setpassword(arr)
 }
 
-validate(){
+function validate(){
   let usernamme = document.getElementById("username").value;
   let email = document.getElementById("email").value
   let pass = document.getElementById("password").value
 
-  if(this.state.email.length + this.state.password.length + this.state.userN.length === 0){
+  if(Nemail.length + Npassword.length + NuserN.length === 0){
     if (usernamme !== "" || email !== "" || pass !== ""){
       return true;
     } else{
@@ -159,8 +154,6 @@ validate(){
     return false;
   }
 }
-
-  render() {
     return (
       <div className="Regis">
         <div className="loginButton1">
@@ -171,14 +164,14 @@ validate(){
               id="username"
               name="name"
               placeholder="Username"
-              onChange={() => this.ValidateUsername()}
+              onChange={() => ValidateUsername()}
               required
             />
-            <p id="bottom">{this.state.userN[0]}</p>
+            <p id="bottom">{NuserN[0]}</p>
           </div>
           <div id="emailN">
-            <input type="email" name="" id="email" placeholder="Email" onChange={()=> {this.validateEmail()}} />
-            <p id="bottoms">{this.state.email[0]}</p>
+            <input type="email" name="" id="email" placeholder="Email" onChange={()=> {validateEmail()}} />
+            <p id="bottoms">{Nemail[0]}</p>
           </div>
           <div id="passN">
             <input
@@ -187,18 +180,15 @@ validate(){
               id="password"
               name="password"
               placeholder="Password"
-              onChange={() => this.validatePassword()}
+              onChange={() => validatePassword()}
               required
             />
-            <p id="bottoms">{this.state.password[0]}</p>
+            <p id="bottoms">{Npassword[0]}</p>
           </div>
         </div>
-        <p id="submit" onClick={this.postInfo}>
+        <p id="submit" onClick={postInfo}>
           Create Account
         </p>
       </div>
     );
   }
-}
-
-export default Regis;

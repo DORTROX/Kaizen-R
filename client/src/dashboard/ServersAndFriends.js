@@ -3,16 +3,16 @@ import "../css/ServerAndFriends.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faEllipsis} from "@fortawesome/free-solid-svg-icons";
 
-export const ServersAndFriends = () => {
+export const ServersAndFriends = (props) => {
   return (
     <div className="ServersAndFriends">
       <div className="profile">
         <img
-          src="https://images-ext-1.discordapp.net/external/GmSLnQrAoOgn_q2W-WzmAgYcmNI9XKPQGlNmT8OLqWs/%3Fsize%3D4096/https/cdn.discordapp.com/icons/971114380097896498/0cbf1f96b2bb1d464f9b3a964ee95764.png?width=480&height=480"
+          src={props.usd.pfp}
           alt=""
           srcSet=""
         />
-        <p>DORTROX</p>
+        <p>{props.usd.name}</p>
         <FontAwesomeIcon icon={faEllipsis}/>
       </div>
       <h5>Servers</h5>
