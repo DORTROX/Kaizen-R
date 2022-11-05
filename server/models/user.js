@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { Server } = require('socket.io');
 const UserSchema  = new mongoose.Schema({
 name :{
       type  : String,
@@ -25,7 +24,7 @@ date :{
     type : Date,
     default : Date.now
 } ,
-Server : {
+servers : {
     type: Array,
     required: true
 }

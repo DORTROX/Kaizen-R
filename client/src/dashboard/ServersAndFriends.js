@@ -10,7 +10,6 @@ export const ServersAndFriends = (props) => {
         <img
           src={props.usd.pfp}
           alt=""
-          srcSet=""
         />
         <p>{props.usd.name}</p>
         <FontAwesomeIcon icon={faEllipsis}/>

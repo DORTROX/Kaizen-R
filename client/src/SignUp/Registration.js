@@ -22,7 +22,10 @@ export default function Regis() {
         document.getElementById("username").value = ""
         return alert("Name already registered")
       } else {
-        localStorage.setItem("OAuth", res.data);
+        localStorage.setItem("OAuth", res.data.token);
+        localStorage.setItem("Name", res.data.name)
+        localStorage.setItem("email", res.data.email)
+        localStorage.setItem("servers", res.data.servers)
         navigate("/")
       }
     })
