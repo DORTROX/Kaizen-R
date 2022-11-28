@@ -19,9 +19,7 @@ const Dashboard = () => {
   }, []);
   function decide(solos) {
     if (solos.status === 200) {
-      console.log(solos)
       setUserData({name: solos.data.name, pfp: solos.data.pfp})
-      console.log(solos.data)
       setPage("valid");
     } else {
       setPage("invalid");

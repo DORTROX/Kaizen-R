@@ -5,10 +5,8 @@ export default function addServer() {
   const [error, seterror] = useState([]);
   function ValidateServerName() {
     let arr = error;
-    console.log(arr)
     let usernamme = document.getElementById("Sname").value;
-    console.log(usernamme)
-    if (/[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(usernamme)) {
+    if (/[-!@#$%^&*()_+|~=`{}/[]:";'<>?,.]/.test(usernamme)) {
       if (arr.indexOf("No special Characters are allowed") !== -1) {
       } else {
         arr.push("No special Characters are allowed");
@@ -50,7 +48,7 @@ export default function addServer() {
       form.append("image", document.getElementById("file").files[0])
       axios
       .post(
-        "https://api.imgbb.com/1/upload?expiration=600&key=7bd49ee45c0b60ced25adbda95e5baf5&image=", form)
+        "https://api.imgbb.com/1/upload?key=7bd49ee45c0b60ced25adbda95e5baf5&image=", form)
       .then((response) => {
         let sata = {Sname:document.getElementById("Sname").value,members: localStorage.getItem("Name").toString(), imageUri : response.data.data.image.url}
         axios.post("http://localhost:1000/CreateServer", JSON.stringify(sata)).then((response) => {
@@ -73,7 +71,7 @@ export default function addServer() {
       <div className="realAdd">
         <div className='items'>
           <div>
-            <div className='prevBoxImg'><img id="preview" src="" alt="" srcset="" /></div>
+            <div className='prevBoxImg'><img id="preview" src="" alt="" srcSet="" /></div>
             <input onChange={() => previewImage()} id="file" type="file" name=""/>
           </div>
           <div className='prevBoxName'>
