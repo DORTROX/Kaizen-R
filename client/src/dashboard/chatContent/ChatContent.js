@@ -93,7 +93,7 @@ export default class ChatContent extends Component {
   };
 
   render() {
-    return (-
+    return (
       <>
       {(() => {
         axios.get('http://localhost:1000/FetchServerData/'+ this.props.player).then((resp) => {
