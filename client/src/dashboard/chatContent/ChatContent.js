@@ -94,12 +94,13 @@ export default class ChatContent extends Component {
 
   render() {
     return (
-      <>
-      {(() => {
-        axios.get('http://localhost:1000/FetchServerData/'+ this.props.player).then((resp) => {
-          console.log(resp)
-          return (
             <div className="main__chatcontent">
+                {useEffect(() => {
+                  return () => {
+                    console.log("Tmkc")
+                  }
+                }, [this.props.player])
+                }
           <div className="content__header">
             <div className="blocks">
               <div className="current-chatting-user">
@@ -152,10 +153,6 @@ export default class ChatContent extends Component {
             </div>
           </div>
         </div>
-          )
-        })
-      })()}
-      </>
     );
   }
 }

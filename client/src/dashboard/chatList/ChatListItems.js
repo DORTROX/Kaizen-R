@@ -21,8 +21,8 @@ export default class ChatListItems extends Component {
       <div
         style={{ animationDelay: `0.${this.props.animationDelay}s` }}
         onClick={(e) => {
-          console.log(e.target)
-          console.log(e.target.innerText)
+          // console.log(e.target)
+          // console.log(e.target.innerText)
           this.props.childFunc(e.target.innerText)
         }
         }
