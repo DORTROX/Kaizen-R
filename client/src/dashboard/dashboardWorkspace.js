@@ -71,6 +71,6 @@ export const DashboardWorkspace = (props) => {
   );
 };
 
-// ChatContent.defaultProps = {
-//   player: "None"
-// }
+ChatContent.defaultProps = {
+  player: "None"
+}

@@ -7,7 +7,7 @@ import axios from "axios";
 
 const ChatContent = (props) => {
     let messagesEndRef = createRef(null);
-    const [player, setplayer] = useState('Dock');
+    const [player, setplayer] = useState();
     let chatItms = [
         {
           key: 1,
@@ -102,15 +102,11 @@ const ChatContent = (props) => {
                   isOnline="active"
                   image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU"
                 />
-                <p>{player}</p>  
+                <p>{player}</p>
     {
         // console.log(player)
         useEffect(() => {        
-          return () => {
-            setplayer(props.player)
-            console.log(props.player)
-            // console.log(props.player)
-          }
+              setplayer(props.player) 
         }, [props.player])
         
     }
